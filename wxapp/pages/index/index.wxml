@@ -19,7 +19,7 @@
     <view class="section section_gap">
       <view class="section__title">性别：</view>
       <radio-group class="radio-group">
-         <label wx:for="{{items}}">
+         <label wx:for="{{genders}}">
           <radio value="{{item.value}}" checked="{{item.checked}}" style='margin:5rpx'>{{item.name}}</radio>
         </label> 
       </radio-group>

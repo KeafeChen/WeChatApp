@@ -5,7 +5,7 @@ Page({
     pickerHidden: true,
     modalHidden: true,
     name: '姓名',
-    items: [
+    genders: [
       { 'name': "男", 'value': 'male', 'checked': true },
       { 'name': '女', 'value': 'female', 'checked': false }
     ],
@@ -24,7 +24,7 @@ Page({
   },
   formSubmit: function (e) {
     // console.log(this);
-    // validateRequired(['name', 'phone', 'email', 'song'], this);
+    validateRequired(['name', 'phone', 'email', 'song'], this);
     let values = this.data.form;
     // console.log(values);
     // this.setData(
