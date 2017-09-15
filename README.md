@@ -1,4 +1,5 @@
 # WeChatApp
 MINI Program
-Test Two
-Test Three
+Developed by PUCSSA (Purdue University Chinese Students and Scholars) IT department.
+Used for online signing up for mid-autumn singer competition (voice of Purdue)
+
