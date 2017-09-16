@@ -57,7 +57,8 @@ wx-label {
   width: 17em
 }
 .btn-area{
-    padding: 0 30px;
+    
+    padding: 100 30px;
 }
 .btn-area button{
     margin-top: 20rpx;
