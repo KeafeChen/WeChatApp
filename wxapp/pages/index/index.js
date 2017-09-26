@@ -19,7 +19,7 @@ Page({
   },
   radioChange(e) {
     this.data.form.gender = e.detail.value;
-    console.log(this);
+    // console.log(this);
   },
   validate(e) {
     // console.log(e);
@@ -34,19 +34,8 @@ Page({
     // console.log(this);
     validateRequired(['name', 'phone', 'email', 'song'], this);
     let values = this.data.form;
+    // console.log(values);
     let context = this;
-    console.log(values);
-    this.setData(
-      {
-        // modalHidden: false,
-        name: values.name,
-        gender: values.gender,
-        year: values.year,
-        email: values.email,
-        phone: values.phone,
-        song: values.song
-      }
-    )
     if(!this.data.form.$dirty) {
       wx.request({
         url: 'https://pucssa.org/wxSubmit.php',
@@ -57,23 +46,23 @@ Page({
         },
         success: function (res) {
           console.log(res);
-          context.setData({
-            modalHidden: false
-          })
+          if (res.data == '') {
+            values.$dirty = false;
+            values.$invalidMsg = '';
+            wx.navigateTo({
+              url: '../vote/vote'
+            })
+          }
+          else {
+            values.$invalidMsg = res.data;
+            values.$dirty = true;
+            context.setData({
+              form: values
+            })
+          }
         }
       })
     }
     // console.log('form发生了submit事件，携带数据为：', e.detail.value)
-  },
-  formReset: function (e) {
-    console.log('form发生了reset事件，携带数据为：', e.detail.value)
-    this.setData({
-      chosen: ''
-    })
-  },
-  modalChange: function (e) {
-    this.setData({
-      modalHidden: true
-    })
-  },
+  }
 })

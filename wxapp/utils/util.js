@@ -22,7 +22,7 @@ const validators = {
 };
 
 let validate = (e, context) => {
-  console.log(e);
+  // console.log(e);
   let validator = e.currentTarget.dataset.validator ? e.currentTarget.dataset.validator.split(' ') : [e.currentTarget.dataset.validator];
   let value = (e.detail.value || '').trim();
   // console.log(value);
