@@ -49,14 +49,14 @@ Page({
     )
     if(!this.data.form.$dirty) {
       wx.request({
-        url: 'https://pucssa.org/wxSubmit.php',
+        url: 'https://pucssa.org/validate.php',
         method: 'post',
         data: values,
         header: {
-          'content-type': 'application/x-www-form-urlencoded'
+          'content-type': 'application/json'
         },
         success: function (res) {
-          console.log(res);
+          console.log('sent');
           context.setData({
             modalHidden: false
           })
