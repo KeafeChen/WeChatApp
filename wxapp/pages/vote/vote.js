@@ -23,7 +23,7 @@ Page({
       { name: '10', value: '张翔宇' },
     ],
     group3_female: [
-      { name: '11', value: '赵艺柯', checked: 'ture' },
+      { name: '11', value: '赵艺珂', checked: 'ture' },
       { name: '12', value: '赵艺晴' },
     ],
     form:{
