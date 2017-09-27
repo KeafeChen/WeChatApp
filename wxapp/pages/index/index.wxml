@@ -8,6 +8,7 @@
       <input name="id" type="number" placeholder="{{id}}" bindblur='validate' data-validator='required id' focus='true' data-name='id'/>
       <icon wx:if="{{form.name!==undefined}}" type="{{form.name?'success':'warn'}}" size="20" />
     </view>
+    
     <view wx:if="{{form.$invalidMsg && form.$dirty}}" class="invalid">
       {{form.$invalidMsg}}
     </view>
