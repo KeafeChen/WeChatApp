@@ -19,10 +19,11 @@ const validators = {
     rule: /^[0-9]{4}$/,
     msg: '请输入正确的门票编号'
   }
+  
 };
 
 let validate = (e, context) => {
-  // console.log(e);
+  console.log(e);
   let validator = e.currentTarget.dataset.validator ? e.currentTarget.dataset.validator.split(' ') : [e.currentTarget.dataset.validator];
   let value = (e.detail.value || '').trim();
   // console.log(value);
@@ -31,7 +32,7 @@ let validate = (e, context) => {
   let form = context.data.form || {};
   for (let i = 0; i < validator.length; i++) {
     let rule = validators[validator[i]].rule;
-    if(!rule.test(value)) {
+    if (!rule.test(value)) {
       form[name] = '';
       form.$invalidMsg = validators[validator[i]].msg;
       form.$dirty = true;
@@ -43,7 +44,7 @@ let validate = (e, context) => {
     else {
       form[name] = value;
       form.$dirty = false;
-      form.$invalidMsg = '';      
+      form.$invalidMsg = '';
       context.setData({
         form: form
       })
@@ -56,7 +57,7 @@ let validateRequired = (props, context) => {
   // console.log(context);
   let form = context.data.form || {};
   props.forEach((prop) => {
-    if(!validators.required.rule.test(context.data.form[prop])) {
+    if (!validators.required.rule.test(context.data.form[prop])) {
       form[prop] = validators.required.msg;
     }
     else {
@@ -64,4 +65,4 @@ let validateRequired = (props, context) => {
     }
   })
 }
-module.exports = {validate, validateRequired}
+module.exports = { validate, validateRequired }
