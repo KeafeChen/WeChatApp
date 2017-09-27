@@ -8,17 +8,15 @@
     <text class="page__title">中秋歌手大赛投票</text>
   </view>
 
-<!--   <view class="Deadline_location">
-    <text>报名截止日期: 09/02/2017</text>
+  <view class="page__hd">
+    <text class="page__subtitle">男生组</text>
   </view>
-  <view class="Deadline_location">
-    <text>地点: PMU</text>
-  </view> -->
+
   <form class="page__bd" catchsubmit="formSubmit" catchreset="formReset">
     <view class="section section_gap">
       <view class="section__title">第一组</view>
       <radio-group bindchange="first">
-      <label style="display: flex" wx:for-items="{{array_first}}">
+      <label style="display: flex" wx:for-items="{{group1_male}}">
         <radio value="{{item.name}}" checked='{{item.checked}}' />{{item.value}}
     </label>
       </radio-group>
@@ -26,7 +24,7 @@
     <view class="section section_gap">
       <view class="section__title">第二组</view>
       <radio-group bindchange="second">
-      <label style="display: flex" wx:for-items="{{array_second}}">
+      <label style="display: flex" wx:for-items="{{group2_male}}">
         <radio value="{{item.name}}" checked='{{item.checked}}'/>{{item.value}}
     </label>
       </radio-group>
@@ -34,46 +32,40 @@
     <view class="section section_gap">
       <view class="section__title">第三组</view>
       <radio-group bindchange="third">
-      <label style="display: flex" wx:for-items="{{array_third}}">
+      <label style="display: flex" wx:for-items="{{group3_male}}">
         <radio value="{{item.name}}" checked='{{item.checked}}'/>{{item.value}}
     </label>
       </radio-group>
     </view>
+     <view class="page__hd">
+      <text class="page__subtitle">女生组</text>
+    </view>
     <view class="section section_gap">
-      <view class="section__title">第四组</view>
+      <view class="section__title">第一组</view>
       <radio-group bindchange="fourth">
-      <label style="display: flex" wx:for-items="{{array_fourth}}">
+      <label style="display: flex" wx:for-items="{{group1_female}}">
         <radio value="{{item.name}}" checked='{{item.checked}}'/>{{item.value}}
     </label>
       </radio-group>
     </view>
     <view class="section section_gap">
-      <view class="section__title">第五组</view>
+      <view class="section__title">第二组</view>
       <radio-group bindchange="fifth">
-      <label style="display: flex" wx:for-items="{{array_fifth}}">
+      <label style="display: flex" wx:for-items="{{group2_female}}">
         <radio value="{{item.name}}"checked='{{item.checked}}' />{{item.value}}
     </label>
       </radio-group>
     </view>
     <view class="section section_gap">
-      <view class="section__title">第六组</view>
+      <view class="section__title">第三组</view>
       <radio-group bindchange="sixth">
-      <label style="display: flex" wx:for-items="{{array_sixth}}">
+      <label style="display: flex" wx:for-items="{{group3_female}}">
         <radio value="{{item.name}}" checked='{{item.checked}}'/>{{item.value}}
     </label>
       </radio-group>
     </view>
     <view class="btn-area">
       <button formType="submit" disabled='{{form.$dirty}}'>Submit</button>
-      <button formType="reset">Reset</button>
     </view>
-    <modal class="modal" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
-      <view> 您投票的表单如下 </view>
-      <view> 第一组:{{group1_male}} </view>
-      <view> 性别:{{gender}} </view>
-      <view> 电话:{{phone}}</view>
-      <view> 邮箱:{{email}} </view>
-      <view> 曲目:{{song}}</view>
-    </modal>
   </form>
 </view>
