@@ -11,7 +11,7 @@ Page({
       { name: '4', value: '岳子昂' },
     ],
     group3_male: [
-      { name: '5', value: 'Jacob', checked: 'ture' },
+      { name: '5', value: '韩昕昊', checked: 'ture' },
       { name: '6', value: 'Chris' },
     ],
     group1_female: [
