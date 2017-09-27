@@ -1,3 +1,5 @@
 <view class="page">
-  <icon type="success" size="20" />
+  <icon type="success" size="120" />
+  <text>{{text}}</text>
+  <navigator url="/pages/index/index" hover-class="navigator-hover">{{title}}</navigator>
 </view>

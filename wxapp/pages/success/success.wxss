@@ -1,1 +1,19 @@
 /* pages/success/success.wxss */
+.page {
+  min-height: 100%;
+  flex: 1;
+  /* background-color: #FBF9FE; */
+  font-size: 32rpx;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 40%;
+}
+icon {
+  margin: 0 auto 50px auto;
+  display: block;
+}
+navigator {
+  margin-top: 20px;
+}
