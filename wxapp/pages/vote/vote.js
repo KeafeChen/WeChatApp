@@ -4,18 +4,63 @@ Page({
   data: {
     pickerHidden: true,
     modalHidden: true,
-    name: '姓名',
-    genders: [
-      { 'name': "男", 'value': '男', 'checked': true },
-      { 'name': '女', 'value': '女', 'checked': false }
+    group1_male: '1',
+    array_first: [
+      { name: '1', value: '张灿', checked: 'ture' },
+      { name: '2', value: '林浩哲' },
     ],
-    email: 'pucssa@purdue.edu',
-    phone: '012-345-6789',
-    song: '请填写参赛曲目',
-    form: {
-      gender: '男'
-    },
-    id: '请输入您的门票编号'
+    group2_male: '3',
+    array_second: [
+      { name: '3', value: '杨超', checked: 'ture' },
+      { name: '4', value: '岳子昂' },
+    ],
+    group3_male: '5',
+    array_third: [
+      { name: '5', value: 'Jacob', checked: 'ture' },
+      { name: '6', value: 'Chris' },
+    ],
+    group1_female: '7',
+    array_fourth: [
+      { name: '7', value: '雷雨欣', checked: 'ture' },
+      { name: '8', value: '苏帧欢' },
+    ],
+    group2_female: '9',
+    array_fifth: [
+      { name: '9', value: '肖晓', checked: 'ture' },
+      { name: '10', value: '张翔宇' },
+    ],
+    group3_female: '11',
+    array_sixth: [
+      { name: '11', value: '赵艺柯', checked: 'ture' },
+      { name: '12', value: '赵艺晴' },
+    ],
+    form:{
+      group1_male:'1'
+    }
+  },
+  first: function (e) {
+    this.data.form.group1_male = e.detail.value;
+    console.log(e);
+  },
+  second: function (e) {
+    this.data.form.group2_male = e.detail.value;
+    console.log(e);
+  },
+  third: function (e) {
+    this.data.form.group3_male = e.detail.value;
+    console.log(e);
+  },
+  fourth: function (e) {
+    this.data.form.group1_female = e.detail.value;
+    console.log(e);
+  },
+  fifth: function (e) {
+    this.data.form.group2_female = e.detail.value;
+    console.log(e);
+  },
+  sixth: function (e) {
+    this.data.form.group3_female = e.detail.value;
+    console.log(e);
   },
   radioChange(e) {
     this.data.form.gender = e.detail.value;
@@ -30,24 +75,27 @@ Page({
     validate(e, this);
     // console.log(this);
   },
+  onLoad:function(options){
+    console.log(options);
+  },
   formSubmit: function (e) {
     // console.log(this);
-    validateRequired(['name', 'phone', 'email', 'song'], this);
+    validateRequired(['group1_male', 'group2_male', 'group3_male', 'group1_female', 'group2_female', 'group3_female'], this);
     let values = this.data.form;
     let context = this;
     console.log(values);
     this.setData(
       {
         // modalHidden: false,
-        name: values.name,
-        gender: values.gender,
-        year: values.year,
-        email: values.email,
-        phone: values.phone,
-        song: values.song
+        group1_male: values.group1_male,
+        group2_male: values.group2_male,
+        group3_male: values.group3_male,
+        group1_female: values.group1_female,
+        group2_female: values.group2_female,
+        group2_female: values.group3_female
       }
     )
-    if(!this.data.form.$dirty) {
+    if (!this.data.form.$dirty) {
       wx.request({
         url: 'https://pucssa.org/validate.php',
         method: 'post',

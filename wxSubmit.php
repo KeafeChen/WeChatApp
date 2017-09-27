@@ -17,7 +17,7 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$num = $_POST["id"];
 	}
-	echo $num;
+	// echo $num;
 
 	$smt = $pdo -> prepare("SELECT id FROM vote_round1 where id=:ID");
 	$smt -> bindValue(":ID", $id);
@@ -28,11 +28,11 @@
 
 	if ($id != null) {
 		$msg = "您已过提交投票，感谢参与";
-		// echo $msg;
+		echo $msg;
 	}
 	else {
 		$msg = "";
-		// echo $msg;
+		echo $msg;
 	}
 	exit;
 ?>
