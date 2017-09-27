@@ -93,6 +93,9 @@ Page({
       },
       success: function (res) {
         console.log(res);
+        wx.navigateTo({
+          url: '../success/success',
+        })
       }
     })
     // console.log('form发生了submit事件，携带数据为：', e.detail.value)

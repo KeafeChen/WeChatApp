@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/vote/vote"
+    "pages/vote/vote",
+    "pages/success/success"
   ]
 }

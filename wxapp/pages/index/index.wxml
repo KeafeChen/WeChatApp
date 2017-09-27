@@ -6,7 +6,7 @@
     <view class="section section_gap">
       <view class="section__title">您的门票编号：</view>
       <input name="id" type="number" placeholder="{{id}}" bindblur='validate' data-validator='required id' focus='true' data-name='id'/>
-      <icon wx:if="{{form.name!==undefined}}" type="{{form.name?'success':'warn'}}" size="20" />
+      <icon wx:if="{{form.id!==undefined}}" type="{{form.id?'success':'warn'}}" size="20" />
     </view>
     
     <view wx:if="{{form.$invalidMsg && form.$dirty}}" class="invalid">
