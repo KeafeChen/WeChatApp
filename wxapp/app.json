@@ -1,6 +1,6 @@
 {
-    "pages": [
-      "pages/index/index",
-      "pages/vote/vote"
-    ]
+  "pages": [
+    "pages/index/index",
+    "pages/vote/vote"
+  ]
 }
